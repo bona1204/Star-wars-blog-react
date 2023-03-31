@@ -20,7 +20,9 @@ const SinglePeople = () => {
     }, [params.uid])
 
     return (<>
-        Soy {people.name ? people.name : ""} con el uid {params.uid} y mi género es {people?.gender}
+     <img src="https://i.redd.it/l3fya3oustw41.jpg" className="img" alt="..." />
+        <h1>Soy {people.name ? people.name : ""}</h1>
+        <p>Mi uid {params.uid} y mi género es {people?.gender}</p>
     </>)
 }
 

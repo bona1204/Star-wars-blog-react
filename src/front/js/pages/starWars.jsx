@@ -32,18 +32,6 @@ const StarWars = () => {
                 setListVehicles(respuestaJson.results)
             }
 
-            /* ({ respuestaJson, response } = await actions.useFetch("/login"))
-            if (response.ok) {
-                console.log(respuestaJson)
-                setListVehicles(respuestaJson.results)
-            }
-            if (respuestaJson.login == true) {
-                ({ respuestaJson, response } = await actions.useFetch("/saldo-de-la-cuenta"))
-                if (response.ok) {
-                    console.log(respuestaJson)
-                    setListVehicles(respuestaJson.results)
-                }
-            } */
 
         }
         //cargaDatos() //login, //consultar saldo 
@@ -74,35 +62,32 @@ const StarWars = () => {
     useEffect(() => { }, [listVehicles])
 
     return (<>
-        Soy el componente de Star wars
 
-
-        <div>
-            <ul>
+        <div className="container">
+            <div className="row flex-row flex-nowrap overflow-auto">
                 {listPeople && listPeople.length > 0 ?
                     <>
                         {listPeople.map((item, index) => {
-                            return <li key={item.uid}>
+                            return <div className="col-3" key={item.uid}>
                                 <CardPeople name={item.name} uid={item.uid} />
-                            </li>
+                            </div>
                         })}
                     </> : <></>}
-            </ul>
+            </div>
         </div>
         <br />
-        <div>
-            <ul>
+        <div className="container">
+            <div className="row flex-row flex-nowrap overflow-auto">
                 {listPlanets && listPlanets.length > 0 ?
                     <>
                         {listPlanets.map((item, index) => {
-                            return <li key={item.uid}>
+                            return <div className="col-3" key={item.uid}>
                                 <CardPlanet name={item.name} uid={item.uid} />
-                            </li>
+                            </div>
                         })}
                     </> : <></>}
-            </ul>
+            </div>
         </div>
-
 
     </>)
 }
