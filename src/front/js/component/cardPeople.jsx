@@ -19,7 +19,7 @@ const CardPeople = (props) => {
                         category: "people",
                         link: `/people/${props.uid}`
                     })
-                }}>
+                }}> 
                     ⭐
                 </button>
             </div>

@@ -5,6 +5,10 @@ import { Link } from "react-router-dom";
 export const Navbar = () => {
   //<a href="./demo.html">
   const { store, actions } = useContext(Context);
+  const [fav, setfav] = useState([]);
+  useEffect(() => {
+    setfav(store.favoritos);
+  }, [store.favoritos]);
   return (
     <nav className="navbar navbar-light bg-light">
       <div className="container">
@@ -26,16 +30,18 @@ export const Navbar = () => {
               className="dropdown-menu list-unstyled"
               aria-labelledby="navbar Dropdown"
             >
-              {store.favoritos && store.favoritos.length > 0 ? (
+              {fav && fav.length > 0 ? (
                 <>
-                  {store.favoritos.map((item, index) => {
+                  {fav.map((item, index) => {
                     return (
-                      <li>
+                      <li key={index}>
                         {" "}
-                        <Link class="dropdown-item" key={index} to={item.link}>
+                        <Link className="dropdown-item" key={index} to={item.link}>
                           {item.name}
                         </Link>
-                        <button className="btn d-flex" onClick={""}>X</button>
+                        <button className="btn d-flex" onClick={() => {
+                    actions.eliminarFavorito(index)
+                }}>X</button>
                       </li>
                     );
                   })}

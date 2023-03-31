@@ -7,7 +7,7 @@ import { ToDo } from "./pages/todos.jsx";
 
 import StarWars from "./pages/starWars.jsx";
 import SinglePeople from "./pages/singlePeople.jsx";
-
+import SinglePlanet from "./pages/singlePlanet.jsx";
 import { Demo } from "./pages/demo";
 import { Single } from "./pages/single";
 import injectContext from "./store/appContext";
@@ -34,6 +34,7 @@ const Layout = () => {
                         <Route element={<h1>EStoy en la vista de 4Geeks</h1>} path="/4geeks" />
                         <Route element={<Single />} path="/single/:thetitle" />
                         <Route element={<SinglePeople />} path="/people/:uid" />
+                        <Route element={<SinglePlanet />} path="/planet/:uid" />
                         <Route element={<h1>Not found! 404</h1>} path="*" />
                     </Routes>
                     <Footer />
