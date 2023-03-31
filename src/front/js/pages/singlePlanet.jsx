@@ -22,7 +22,9 @@ const SinglePlanet = () => {
     return (<>
      <img src="https://i.redd.it/l3fya3oustw41.jpg" className="img" alt="..." />
         <h1>Este es el planeta {planet.name ? planet.name : ""}</h1>
-        <p>Mi uid {params.uid}</p>
+        <h2>Mi uid {params.uid}</h2>
+        <h2>Población: {planet.population}</h2>
+        <h2>Gravedad: {planet.gravity}</h2>
     </>)
 }
 
